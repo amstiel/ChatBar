@@ -10,6 +10,8 @@ Graphics: Vynn
 -Button Bar for openning chat messages of each type.
 
 Change Log:
+v.2.6
+-Beta support for Turtle WoW hardcore channel (thanks Amstiel)
 v.2.5
 -Added larger buttons option to options menu
 v2.4
@@ -264,6 +266,15 @@ ChatBar_ChatTypes = {
 		click = ChatBar_StandardButtonClick,
 		show = function()
 			return (not ChatBar_HiddenButtons[CHAT_MSG_EMOTE]);
+		end
+	},
+	{
+		type = "HARDCORE",
+		shortText = function() return CHATBAR_HARDCORE_ABRV; end,
+		text = function() return CHAT_MSG_HARDCORE; end,
+		click = ChatBar_StandardButtonClick,
+		show = function()
+			return (not ChatBar_HiddenButtons[CHAT_MSG_HARDCORE]);
 		end
 	},
 	{
@@ -1033,6 +1044,7 @@ function ChatBar_UpdateButtonFlashing()
 		frame:RegisterEvent("CHAT_MSG_OFFICER");
 		frame:RegisterEvent("CHAT_MSG_WHISPER");
 		frame:RegisterEvent("CHAT_MSG_EMOTE");
+		frame:RegisterEvent("CHAT_MSG_HARDCORE");
 		frame:RegisterEvent("CHAT_MSG_CHANNEL");
 	else
 		frame:UnregisterEvent("CHAT_MSG_SAY");
@@ -1045,6 +1057,7 @@ function ChatBar_UpdateButtonFlashing()
 		frame:UnregisterEvent("CHAT_MSG_OFFICER");
 		frame:UnregisterEvent("CHAT_MSG_WHISPER");
 		frame:UnregisterEvent("CHAT_MSG_EMOTE");
+		frame:UnregisterEvent("CHAT_MSG_HARDCORE");
 		frame:UnregisterEvent("CHAT_MSG_CHANNEL");
 	end
 end

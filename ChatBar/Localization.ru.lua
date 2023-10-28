@@ -11,6 +11,7 @@ if ( GetLocale() == "ruRU" ) then
 	CHATBAR_OFFICER_ABRV		= "О";
 	CHATBAR_WHISPER_ABRV		= "Ш";
 	CHATBAR_EMOTE_ABRV			= "Э";
+	CHATBAR_HARDCORE_ABRV		= "Х";
 	
 	CHATBAR_MENU_MAIN_TITLE 			= "Настройки Чатбара";
 	CHATBAR_MENU_MAIN_LARGE 			= "Большие кнопки";
